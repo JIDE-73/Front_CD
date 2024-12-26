@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Contenedor principal -->
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <!-- Botón al lado izquierdo del logo -->
+        <button class="toggle-button" aria-label="Toggle Sidebar">
+          <span class="toggle-icon">&#9776;</span>
+          <!-- Icono de hamburguesa -->
+        </button>
+
+        <!-- Logo -->
+        <img src="assets/images/clickbalance.png" alt="Logo" />
+
+        <!-- Opciones de usuario -->
+        <div class="user-options">
+          <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+          <span class="icon"><i class="fas fa-question-circle"></i></span>
+          <span class="icon"><i class="fas fa-file"></i></span>
+          <span class="icon"><i class="fas fa-user"></i></span>
+        </div>
+      </header>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="search-container">
+          <i class="fas fa-search"></i>
+          <input class="search" type="text" placeholder="Buscar menú..." />
+        </div>
+
+        <div class="menu">
+          <h3><i class="fas fa-building"></i> Empresas</h3>
+          <ul>
+            <li>ClickCB</li>
+            <li>Empresa alberto</li>
+            <li>Matriz</li>
+            <li>Central</li>
+            <li>Extrangera</li>
+            <li>Plaza 5</li>
+            <li>Empresa demo</li>
+            <li>Empresa demo DI99</li>
+            <li>Grupo CA Restorts</li>
+            <li>Guzdan Services</li>
+            <li>Guzdan 3</li>
+            <li>LogitLab</li>
+            <li>LogitLab Replica</li>
+          </ul>
+        </div>
+        <div class="settings">
+          <a href="#"><i class="fas fa-cogs"></i> Configuración</a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        </div>
+      </aside>
+
+      <!-- Layout principal -->
+      <div class="main-layout">
+        <div class="container">
+          <!-- Contenido principal -->
+          <main class="main-content">
+            <div class="carousel">
+              <div class="carousel-images">
+                <img
+                  src="assets/images/clickbalance-podcast-801121147.jpg"
+                  class="carousel-image"
+                  alt="Imagen 1"
+                />
+                <img
+                  src="assets/images/maxresdefault-382978126.jpg"
+                  class="carousel-image"
+                  alt="Imagen 2"
+                />
+              </div>
+              <div class="carousel-buttons">
+                <button class="prev-button">◀</button>
+                <button class="next-button">▶</button>
+              </div>
+            </div>
+
+            <div class="metrics">
+              <!-- Título y Subtítulo -->
+              <div class="metrics-header">
+                <div class="metrics-title">
+                  <h2>Comparativa anual de ventas</h2>
+                  <p>Empresa de pruebas y sistemas S.A de C.V.</p>
+                </div>
+
+                <!-- Selector de fechas y iconos -->
+                <div class="metrics-actions">
+                  <input type="date" class="date-selector" />
+                  <div class="icons">
+                    <i class="fas fa-chart-bar" title="Gráfica"></i>
+                    <i class="fas fa-file" title="Archivo"></i>
+                    <i class="fas fa-download" title="Descargar"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gráfica de barras -->
+              <canvas id="barChart"></canvas>
+            </div>
+          </main>
+
+          <!-- Columna derecha -->
+          <aside class="right-column">
+            <!-- Barra superior con texto y switch -->
+            <div class="top-bar">
+              <span>Asistente virtual</span>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <!-- Gráfico de dona y título "Membresía Clickbalance" -->
+            <div class="card">
+              <h4>Membresía Clickbalance</h4>
+              <div class="chart-placeholder">
+                <canvas id="doughnutChart"></canvas>
+                <div class="days-left">9 días restantes</div>
+              </div>
+              <!-- Rectángulo con miembros y vencimientos -->
+              <div class="stats">
+                <div class="stat-item">
+                  <span>Miembros</span>
+                  <span>12729</span>
+                </div>
+                <div class="stat-item">
+                  <span>Vencimientos</span>
+                  <span id="vencimiento-date"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gráfico de pastel con 4 colores diferentes -->
+            <div class="card">
+              <h4><br />Distribución de Usuarios</h4>
+              <div class="chart-placeholder">
+                <canvas id="pieChart"></canvas>
+                <div class="legend"></div>
+              </div>
+            </div>
+
+            <!-- Gráfico tipo onda -->
+            <div class="card">
+              <div class="chart-placeholder">
+                <canvas id="waveChart"></canvas>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <!-- Solo se muestra si es una pantalla pequeña-->
+    <footer>
+      <div class="footer-item">
+        <span class="icon"><i class="fas fa-house"></i></span>
+        <span class="text"><br />Inicio</span>
+      </div>
+      <!-- Icono Casa con texto -->
+      <div class="footer-item">
+        <span class="icon"><i class="fas fa-building"></i></span>
+        <span class="text"><br />Mis <br />Empresas</span>
+      </div>
+      <!-- Icono Edificio con texto -->
+      <div class="footer-item">
+        <span class="icon"><i class="fas fa-comment"></i></span>
+        <span class="text"><br />Asistente <br />Empresarial</span>
+      </div>
+      <!-- Icono Mensaje con texto -->
+      <div class="footer-item">
+        <span class="icon"><i class="fas fa-user"></i></span>
+        <span class="text"><br />Mi Perfil</span>
+      </div>
+      <!-- Icono Persona con texto -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

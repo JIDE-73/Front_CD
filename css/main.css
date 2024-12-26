@@ -1,0 +1,609 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.right-column,
+.header,
+footer,
+.sidebar,
+.carousel,
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f5f7;
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  width: 100%; /* Asegura que ocupe el 100% del ancho */
+  height: 100%; /* Asegura que ocupe el 100% de la altura disponible */
+  box-sizing: border-box; /* Incluye padding y bordes en el cálculo del ancho */
+}
+
+/* Header */
+header {
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  box-sizing: border-box; /* Incluye padding y bordes en el cálculo del ancho */
+  background-color: #f5f5f5; /* Fondo ajustable */
+  padding: 10px 20px; /* Espaciado interno */
+  display: flex; /* Flexbox para alinear elementos internos */
+  justify-content: space-between; /* Espaciado entre elementos */
+  align-items: center; /* Centra los elementos verticalmente */
+  position: fixed; /* Fija el header en la parte superior si es necesario */
+  z-index: 10; /* Asegura que esté encima de otros elementos */
+}
+
+footer {
+  display: none; /* Ocultamos el footer por defecto en todas las pantallas */
+}
+
+/* Estilos para la imagen del header */
+.header img {
+  max-width: 200px;
+  object-fit: cover;
+}
+
+/* Iconos de usuario en el header */
+.header .user-options .icon {
+  margin-left: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Layout principal */
+.main-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  margin-top: 70px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+.main-layout.shift-right {
+  transform: translateX(250px); /* Mueve el contenido 250px hacia la derecha */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #04012c;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 250px; /* Flexibilidad para ajustarse */
+  max-width: 100%; /* Evita que se desborde */
+  position: fixed;
+  top: 60px; /* Ajuste para colocar el aside debajo del header */
+  left: -250px; /* Inicialmente fuera de la vista */
+  height: calc(
+    100% - 60px
+  ); /* Ocupa el 100% del alto de la pantalla menos el header */
+  transition: left 0.3s ease;
+}
+
+/* Cuando la barra lateral está activa, se mueve a la izquierda */
+.sidebar.active {
+  left: 0;
+}
+
+.search-container {
+  position: relative;
+  width: auto;
+}
+
+.search {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.search-container i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Estilo del botón para mostrar/ocultar la barra lateral */
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Icono del botón */
+.toggle-icon {
+  font-size: 30px;
+}
+
+/* Estilos de búsqueda en la sidebar */
+.sidebar .search {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+
+/* Estilos para los menús en la sidebar */
+.sidebar .menu h3 {
+  font-size: 18px;
+  color: #90a4ae;
+}
+
+.sidebar .menu ul {
+  list-style: none;
+}
+
+.sidebar .menu ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #455a64;
+}
+
+/* Estilos para los enlaces de configuración en la sidebar */
+.sidebar .settings a {
+  display: block;
+  padding: 10px;
+  color: #90a4ae;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.sidebar .settings a:hover {
+  color: #ffffff;
+}
+
+/* Main content (ocupa el 60% del ancho) */
+.main-content {
+  flex: 2 1 100%;
+  max-width: 75%;
+  box-sizing: border-box;
+}
+
+/* Carrusel */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-images {
+  display: flex; /* Asegura que las imágenes estén alineadas en fila */
+  width: 100%; /* Asegura que el carrusel ocupe el 100% del ancho */
+  max-height: 400px;
+  transition: transform 0.5s ease; /* Efecto suave de transición */
+}
+
+.carousel-image {
+  flex-shrink: 0; /* Evita que las imágenes se reduzcan */
+  width: 100%; /* Cada imagen ocupa el 100% del ancho del carrusel */
+  height: 100%; /* Asegura que las imágenes respeten la altura del contenedor */
+  max-height: 400px; /* Asegura que las imágenes no excedan la altura máxima */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsión */
+}
+
+/* Botones del carrusel */
+.carousel-buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.prev-button,
+.next-button {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* Gráfica de barras */
+#barChart {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+}
+.card {
+  padding: 10px;
+}
+
+/* Gráfico de Doughnut */
+.metrics .chart-placeholder {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.metrics .card {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.card .chart-placeholder {
+  position: relative;
+  height: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card .days-left {
+  position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+  font-size: 20px;
+  font-weight: bold;
+  color: #333; /* Color del texto */
+  z-index: 1; /* Asegura que el texto se muestre sobre la gráfica */
+}
+
+/* Estilo para el aside de la derecha */
+.right-column {
+  position: sticky;
+  top: 0; /* Fija el aside justo después de la altura del header */
+  width: 23.5%; /* O el tamaño deseado */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Estilos generales de la sección metrics */
+.metrics {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos de la cabecera de metrics */
+.metrics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Título y subtítulo en metrics */
+.metrics-title h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.metrics-title p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Contenedor de acciones: fecha y iconos */
+.metrics-actions {
+  display: flex;
+  align-items: center;
+}
+
+.date-selector {
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.icons {
+  display: flex;
+  gap: 10px;
+}
+
+/* Iconos dentro de metrics */
+.icon-graph,
+.icon-file,
+.icon-download {
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.icon-graph:hover,
+.icon-file:hover,
+.icon-download:hover {
+  color: #ff7f00;
+}
+
+/* Estilo de canvas */
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos de la barra superior */
+.top-bar {
+  background-color: #2196;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 50px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main-layout,
+  .carousel,
+  .carousel .carousel-images,
+  .metrics,
+  aside .right-column {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+
+  .main-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #04012c;
+    z-index: 1000;
+  }
+
+  header img {
+    position: relative;
+    max-width: 150px;
+    object-fit: contain;
+    margin: 0 auto;
+  }
+
+  header .user-options {
+    display: none;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    min-height: 50px;
+    max-height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  footer .icon {
+    padding-top: 4px;
+    font-size: clamp(30px, 3vw, 30px);
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  footer .icon:hover {
+    color: #04012c;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 60px;
+    left: -250px;
+    height: calc(100% - 60px);
+    width: 250px;
+    background-color: #04012c;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .main-content {
+    flex: 1;
+    width: 100%;
+    height: 75vh;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .carousel {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+
+  .carousel-image {
+    flex-shrink: 0;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .metrics {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .metrics .metric-item {
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  aside.right-column {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
