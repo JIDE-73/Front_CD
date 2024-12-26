@@ -11,7 +11,7 @@ footer,
 .sidebar,
 .carousel,
 .card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos generales */
@@ -19,9 +19,9 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f4f5f7;
   display: flex;
-  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-  height: 100vh; /* Ocupa toda la altura de la ventana */
-  width: 100%; /* Ocupa todo el ancho */
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
 }
 
 /* Contenedor principal */
@@ -30,26 +30,26 @@ body {
   flex-wrap: wrap;
   gap: 20px;
   padding: 10px;
-  width: 100%; /* Asegura que ocupe el 100% del ancho */
-  height: 100%; /* Asegura que ocupe el 100% de la altura disponible */
-  box-sizing: border-box; /* Incluye padding y bordes en el cálculo del ancho */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 /* Header */
 header {
-  width: 100%; /* Asegura que ocupe todo el ancho */
-  box-sizing: border-box; /* Incluye padding y bordes en el cálculo del ancho */
-  background-color: #f5f5f5; /* Fondo ajustable */
-  padding: 10px 20px; /* Espaciado interno */
-  display: flex; /* Flexbox para alinear elementos internos */
-  justify-content: space-between; /* Espaciado entre elementos */
-  align-items: center; /* Centra los elementos verticalmente */
-  position: fixed; /* Fija el header en la parte superior si es necesario */
-  z-index: 10; /* Asegura que esté encima de otros elementos */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 10;
 }
 
 footer {
-  display: none; /* Ocultamos el footer por defecto en todas las pantallas */
+  display: none;
 }
 
 /* Estilos para la imagen del header */
@@ -76,7 +76,7 @@ footer {
   transition: transform 0.3s ease;
 }
 .main-layout.shift-right {
-  transform: translateX(250px); /* Mueve el contenido 250px hacia la derecha */
+  transform: translateX(250px);
 }
 
 /* Sidebar */
@@ -87,14 +87,12 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex: 1 1 250px; /* Flexibilidad para ajustarse */
-  max-width: 100%; /* Evita que se desborde */
+  flex: 1 1 250px;
+  max-width: 100%;
   position: fixed;
-  top: 60px; /* Ajuste para colocar el aside debajo del header */
-  left: -250px; /* Inicialmente fuera de la vista */
-  height: calc(
-    100% - 60px
-  ); /* Ocupa el 100% del alto de la pantalla menos el header */
+  top: 60px;
+  left: -250px;
+  height: calc(100% - 60px);
   transition: left 0.3s ease;
 }
 
@@ -199,25 +197,25 @@ footer {
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .carousel-images {
-  display: flex; /* Asegura que las imágenes estén alineadas en fila */
-  width: 100%; /* Asegura que el carrusel ocupe el 100% del ancho */
+  display: flex;
+  width: 100%;
   max-height: 400px;
-  transition: transform 0.5s ease; /* Efecto suave de transición */
+  transition: transform 0.5s ease;
 }
 
 .carousel-image {
-  flex-shrink: 0; /* Evita que las imágenes se reduzcan */
-  width: 100%; /* Cada imagen ocupa el 100% del ancho del carrusel */
-  height: 100%; /* Asegura que las imágenes respeten la altura del contenedor */
-  max-height: 400px; /* Asegura que las imágenes no excedan la altura máxima */
-  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsión */
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }
 
 /* Botones del carrusel */
@@ -282,18 +280,18 @@ footer {
 }
 
 .card .days-left {
-  position: absolute; /* Posicionamiento absoluto dentro del contenedor */
+  position: absolute;
   font-size: 20px;
   font-weight: bold;
-  color: #333; /* Color del texto */
-  z-index: 1; /* Asegura que el texto se muestre sobre la gráfica */
+  color: #333;
+  z-index: 1;
 }
 
 /* Estilo para el aside de la derecha */
 .right-column {
   position: sticky;
-  top: 0; /* Fija el aside justo después de la altura del header */
-  width: 23.5%; /* O el tamaño deseado */
+  top: 0;
+  width: 23.5%;
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 10px;

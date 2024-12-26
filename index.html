@@ -15,16 +15,12 @@
     <div class="container">
       <!-- Header -->
       <header class="header">
-        <!-- Botón al lado izquierdo del logo -->
         <button class="toggle-button" aria-label="Toggle Sidebar">
           <span class="toggle-icon">&#9776;</span>
-          <!-- Icono de hamburguesa -->
         </button>
 
-        <!-- Logo -->
         <img src="assets/images/clickbalance.png" alt="Logo" />
 
-        <!-- Opciones de usuario -->
         <div class="user-options">
           <span class="icon"><i class="fas fa-shopping-cart"></i></span>
           <span class="icon"><i class="fas fa-question-circle"></i></span>
@@ -32,7 +28,6 @@
           <span class="icon"><i class="fas fa-user"></i></span>
         </div>
       </header>
-      <!-- Sidebar -->
       <aside class="sidebar">
         <div class="search-container">
           <i class="fas fa-search"></i>
@@ -63,7 +58,6 @@
         </div>
       </aside>
 
-      <!-- Layout principal -->
       <div class="main-layout">
         <div class="container">
           <!-- Contenido principal -->
@@ -88,14 +82,11 @@
             </div>
 
             <div class="metrics">
-              <!-- Título y Subtítulo -->
               <div class="metrics-header">
                 <div class="metrics-title">
                   <h2>Comparativa anual de ventas</h2>
                   <p>Empresa de pruebas y sistemas S.A de C.V.</p>
                 </div>
-
-                <!-- Selector de fechas y iconos -->
                 <div class="metrics-actions">
                   <input type="date" class="date-selector" />
                   <div class="icons">
@@ -113,7 +104,6 @@
 
           <!-- Columna derecha -->
           <aside class="right-column">
-            <!-- Barra superior con texto y switch -->
             <div class="top-bar">
               <span>Asistente virtual</span>
               <label class="switch">
@@ -122,14 +112,13 @@
               </label>
             </div>
 
-            <!-- Gráfico de dona y título "Membresía Clickbalance" -->
             <div class="card">
               <h4>Membresía Clickbalance</h4>
               <div class="chart-placeholder">
                 <canvas id="doughnutChart"></canvas>
                 <div class="days-left">9 días restantes</div>
               </div>
-              <!-- Rectángulo con miembros y vencimientos -->
+
               <div class="stats">
                 <div class="stat-item">
                   <span>Miembros</span>
@@ -142,7 +131,6 @@
               </div>
             </div>
 
-            <!-- Gráfico de pastel con 4 colores diferentes -->
             <div class="card">
               <h4><br />Distribución de Usuarios</h4>
               <div class="chart-placeholder">
@@ -151,7 +139,6 @@
               </div>
             </div>
 
-            <!-- Gráfico tipo onda -->
             <div class="card">
               <div class="chart-placeholder">
                 <canvas id="waveChart"></canvas>
@@ -161,28 +148,25 @@
         </div>
       </div>
     </div>
-    <!-- Solo se muestra si es una pantalla pequeña-->
     <footer>
       <div class="footer-item">
         <span class="icon"><i class="fas fa-house"></i></span>
         <span class="text"><br />Inicio</span>
       </div>
-      <!-- Icono Casa con texto -->
       <div class="footer-item">
         <span class="icon"><i class="fas fa-building"></i></span>
         <span class="text"><br />Mis <br />Empresas</span>
       </div>
-      <!-- Icono Edificio con texto -->
+
       <div class="footer-item">
         <span class="icon"><i class="fas fa-comment"></i></span>
         <span class="text"><br />Asistente <br />Empresarial</span>
       </div>
-      <!-- Icono Mensaje con texto -->
+
       <div class="footer-item">
         <span class="icon"><i class="fas fa-user"></i></span>
         <span class="text"><br />Mi Perfil</span>
       </div>
-      <!-- Icono Persona con texto -->
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

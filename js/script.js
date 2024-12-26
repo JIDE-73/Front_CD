@@ -1,4 +1,4 @@
-// Variables para el carrusel
+// Variables
 const images = document.querySelectorAll('.carousel-image');
 const totalImages = images.length;
 let currentIndex = 0;
@@ -12,11 +12,10 @@ function showImage(index) {
     carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-// Manejo de clics para los botones de navegación
+// Manejo de clics
 prevButton.addEventListener('click', () => showImage(currentIndex - 1));
 nextButton.addEventListener('click', () => showImage(currentIndex + 1));
 
-// Avance automático cada 5 segundos
 const autoSlide = setInterval(() => showImage(currentIndex + 1), 5000);
 
 // Gráfico de dona
@@ -41,7 +40,7 @@ const doughnutChart = new Chart(document.getElementById('doughnutChart').getCont
     }
 });
 
-// Fecha de vencimiento (mañana)
+// Fecha de vencimiento
 const tomorrow = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);
 document.getElementById('vencimiento-date').innerText = tomorrow.toLocaleDateString('es-ES');
@@ -67,7 +66,7 @@ const barChart = new Chart(document.getElementById('barChart').getContext('2d'),
     }
 });
 
-// Gráfico tipo onda (Wave Chart)
+// Gráfico tipo onda
 const waveChart = new Chart(document.getElementById('waveChart').getContext('2d'), {
     type: 'line',
     data: {
@@ -93,7 +92,7 @@ const waveChart = new Chart(document.getElementById('waveChart').getContext('2d'
     }
 });
 
-// Gráfico de pastel (Distribución de Usuarios)
+// Gráfico de pastel
 const pieChart = new Chart(document.getElementById('pieChart').getContext('2d'), {
     type: 'pie',
     data: {
@@ -111,12 +110,12 @@ const pieChart = new Chart(document.getElementById('pieChart').getContext('2d'),
     }
 });
 
-// Selección del menú lateral
+// Selección
 const toggleButton = document.querySelector('.toggle-button');
 const sidebar = document.querySelector('.sidebar');
 const mainLayout = document.querySelector('.main-layout');
 
-// Manejo del clic para mostrar/ocultar el menú lateral
+// Manejo del clic para mostrar/ocultar
 toggleButton.addEventListener('click', () => {
     sidebar.classList.toggle('active');
     mainLayout.classList.toggle('shift-right');
